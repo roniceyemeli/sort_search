@@ -1,0 +1,20 @@
+PROCEDURE permutation(VAR x, y: INTEGER)
+VAR
+    temp:INTEGER;
+BEGIN
+    temp:=x;
+    x:=y;
+    y:=temp;
+END
+
+ALGORITHM sort
+VAR
+    arr : ARRAY_OF INTEGER;
+    i,j :INTEGER;
+BEGIN
+    FOR i FROM 0 TO arr.length-1 STEP 1  DO   
+        FOR j FROM 0 TO i-1 STEP 1  DO
+            permutation(arr[i],arr[j]);
+        END_FOR       
+    END_FOR
+END
